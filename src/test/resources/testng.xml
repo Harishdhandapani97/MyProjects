@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ECommerce Validation Suite" verbose="2" thread-count="1">
+
+    <!-- Global Parameters -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="env" value="staging"/>
+    
+    <!-- Test Configuration -->
+    <test name="Price & Inventory Sync Tests">
+        <parameter name="retryCount" value="2"/>
+        <classes>
+            <class name="com.harish.ecommercePriceStockSync.tests.PriceInventoryTest"/>
+            <!-- Add more test classes as needed:
+            <class name="com.yourpackage.AnotherTestClass"/>
+            -->
+        </classes>
+    </test>
+
+    <!-- Listeners -->
+    <listeners>
+        <listener class-name="com.harish.ecommercePriceStockSync.listeners.TestListener"/>
+        <!-- Add ExtentReports listener if using:
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"/>
+        -->
+    </listeners>
+
+</suite>
+
